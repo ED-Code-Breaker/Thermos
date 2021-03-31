@@ -18,6 +18,14 @@ public class Thermos {
 		}
 	}
 	
+	void pourLiquid(double p) {
+		if(p <= volume) {
+			volume = (float) (volume-p);
+		}else {
+			System.out.print("The thermos is empty\n");
+		}
+	}
+	
 	void displayDetails() {
 		System.out.print("Brand: "+Brand);
 		System.out.print("\nLiquid: "+Liquid);
@@ -26,6 +34,7 @@ public class Thermos {
 	public static void main(String[] args) {
 		Thermos godrej = new Thermos(1, "Godrej", "Orange Juice");
 		godrej.addLiquid(0.4);
+		godrej.pourLiquid(0.2);
 		godrej.displayDetails();
 	}
 
